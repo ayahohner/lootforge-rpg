@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lootforge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>Lootforge</h1>
+        <p>Procedural rogue-RPG. Loot, equip, upgrade, and descend.</p>
+        <div class="seed-row">
+          <label for="seedInput">Seed</label>
+          <input id="seedInput" type="number" />
+          <button id="newRun">Start Run</button>
+        </div>
+        <div class="auto-row">
+          <input type="checkbox" id="autoMode" />
+          <label for="autoMode">Auto-run mode</label>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel hero-panel">
+          <div class="panel-titlebar">
+            <h2>Commander</h2>
+            <span class="mini-note">Run status</span>
+          </div>
+          <div id="heroCards"></div>
+          <div id="resources"></div>
+          <div class="actions">
+            <button id="attackButton" disabled>Attack Target</button>
+            <button id="collectButton">Collect Loot</button>
+            <button id="progressButton">Descend</button>
+            <button id="potionButton">Use Potion</button>
+            <button id="restButton">Rest</button>
+          </div>
+        </section>
+
+        <section class="panel room-panel">
+          <div class="panel-titlebar">
+            <h2 id="roomTitle">Room</h2>
+            <span class="mini-note">Threats & loot</span>
+          </div>
+          <div id="roomMessage"></div>
+          <div id="enemyList"></div>
+        </section>
+
+        <section class="panel equip-panel">
+          <div class="panel-titlebar">
+            <h2>Inventory</h2>
+            <span class="mini-note">Loadout & backpack</span>
+          </div>
+          <button id="autoSellButton" class="toolbar-btn">Auto-Sell Inferior</button>
+          <div class="subsection">
+            <h3>Loadout</h3>
+            <div id="equipped"></div>
+            <h3>Backpack</h3>
+            <div id="inventory"></div>
+          </div>
+        </section>
+
+        <section class="panel log-panel">
+          <div class="panel-titlebar">
+            <h2>Run Log</h2>
+            <span class="mini-note">Recent events</span>
+          </div>
+          <ul id="log"></ul>
+        </section>
+      </main>
+    </div>
+
+    <section id="gameOverModal" class="game-over hidden">
+      <div class="game-over__inner panel">
+        <h2>Game Over</h2>
+        <p>Your run ended in the <strong id="deathRoom"></strong>.</p>
+        <p>Run score: <strong id="runScore"></strong></p>
+        <p>Best score: <strong id="highScore"></strong></p>
+        <p>Total loot value: <strong id="lootValue"></strong></p>
+        <button id="playAgainButton">Play Again</button>
+      </div>
+    </section>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
