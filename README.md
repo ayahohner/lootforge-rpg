@@ -6,16 +6,18 @@ Lootforge is a browser RPG prototype with procedural room generation, combat, lo
 
 ```bash
 cd /Users/benhohner/Documents/Programming/lootforge-rpg
-npm run start
+npm install --ignore-scripts
+npm run dev
 ```
 
-Then open `http://localhost:4173` in your browser.
+Open the local URL printed by the development server.
 
 ## Tests
 
 ```bash
 cd /Users/benhohner/Documents/Programming/lootforge-rpg
 npm test
+npm run test:site
 ```
 
 ## Gameplay
